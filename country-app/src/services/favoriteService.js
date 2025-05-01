@@ -16,7 +16,7 @@ const getAuthHeader = () => {
 export const getUserFavorites = async () => {
   try {
     const headers = getAuthHeader();
-    const response = await fetch(`${API_URL}/all`, {
+    const response = await fetch(`${API_URL}/api/favorites/all`, {
       method: 'GET',
       headers: headers
     });
@@ -43,7 +43,7 @@ export const addToFavorites = async (countryId) => {
     console.log('Adding to favorites with data:', { countryId });
     
     // Send countryCode instead of countryId to match backend expectations
-    const response = await fetch(`${API_URL}/add`, {
+    const response = await fetch(`${API_URL}/api/favorites/add`, {
       method: 'POST',
       headers: headers,
       body: JSON.stringify({ countryCode: countryId })
@@ -79,7 +79,7 @@ export const removeFromFavorites = async (countryId) => {
     const headers = getAuthHeader();
     
     // Match the backend expectation - send as JSON in body instead of URL param
-    const response = await fetch(`${API_URL}/remove`, {
+    const response = await fetch(`${API_URL}/api/favorites/remove`, {
       method: 'DELETE',
       headers: headers,
       body: JSON.stringify({ countryCode: countryId })
