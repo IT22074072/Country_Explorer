@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/favorites';
+const API_URL = process.env.REACT_APP_API_URL;
 
 // Helper function to get authorization header
 const getAuthHeader = () => {
