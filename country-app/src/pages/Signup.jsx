@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { motion } from "framer-motion";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -12,7 +14,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/signup", {
+      const res = await axios.post(`${API_URL}/api/auth/signup`, {
         username,
         email,
         password,
