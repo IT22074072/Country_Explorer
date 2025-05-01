@@ -128,7 +128,7 @@ const Login = () => {
             type="submit"
             className="w-full py-3 text-white bg-purple-600 rounded-full hover:bg-purple-800"
           >
-            Login 🚀
+            Login with D🚀
           </button>
         </form>
 
